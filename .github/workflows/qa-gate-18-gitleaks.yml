@@ -30,7 +30,7 @@ concurrency:
 jobs:
   gitleaks:
     name: Scan for hardcoded secrets
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, ig-general]  # MIG-ephemeral only (never persistent): isolation for untrusted PR-diff content; self-hosted permanent (Manuel 2026-10-20), was ubuntu-latest
     timeout-minutes: 10
     permissions:
       contents: read
