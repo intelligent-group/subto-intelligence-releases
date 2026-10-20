@@ -30,7 +30,7 @@ concurrency:
 jobs:
   gitleaks:
     name: Scan for hardcoded secrets
-    runs-on: [self-hosted, ig-general]  # MIG-ephemeral only (never persistent): isolation for untrusted PR-diff content; self-hosted permanent (Manuel 2026-10-20), was ubuntu-latest
+    runs-on: ubuntu-latest  # runner-policy-ok: hosted-only: PUBLIC repo - org runner group disallows public repos on self-hosted runners (allows_public_repositories=false), and GitHub-hosted minutes are free for public repos; self-hosted is also unsafe for untrusted fork PRs here
     timeout-minutes: 10
     permissions:
       contents: read
